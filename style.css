@@ -1,0 +1,29 @@
+body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: "Arial", sans-serif;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 24px;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: "Arial", sans-serif;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
