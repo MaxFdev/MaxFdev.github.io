@@ -19,8 +19,16 @@ p {
     padding: 0;
 }
 
+nav {
+    align-self: center;
+    color: #ffffff;
+    font-family: "Arial", sans-serif;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
+
 .nav-links {
-    background-color: #000000;
     color: #ffffff;
     font-family: "Arial", sans-serif;
     font-size: 12px;
