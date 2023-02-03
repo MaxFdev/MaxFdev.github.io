@@ -81,3 +81,25 @@ ul {
     font-family: "Arial", sans-serif;
     font-size: 14px;
 }
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 5px;
+    margin: 10px;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.footer_section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+}
