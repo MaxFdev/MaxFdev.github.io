@@ -1,0 +1,110 @@
+body {
+    padding: auto;
+    margin: auto;
+    font-family: "Arial", sans-serif;
+}
+
+a {
+    color: #0099ff;
+    text-decoration: none;
+}
+
+ul.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style-type: none;
+    width: 33%;
+    margin: 0;
+    padding: 0;
+}
+
+.menu .logo {
+    color: #0099ff;
+    font-size: 32px;
+    font-style: italic;
+    font-weight: bold;
+    text-shadow: #424242 2px 1px 0px;
+    padding: 2px;
+    margin: 5px;
+}
+
+.menu .nav_list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    list-style-type: none;
+    align-items: center;
+}
+
+.menu .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #0099ff;
+    font-family: "Arial", sans-serif;
+    font-size: 24px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #6b6b6b;
+    margin: 50px;
+    border-radius: 20px;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #6b6b6b;
+    color: #ffffff;
+    max-width: 50%;
+    font-family: "Arial", sans-serif;
+    font-size: 14px;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 5px;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.footer .footer_section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.footer .footer_info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 14px;
+}
+
+.footer .footer_list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    list-style-type: none;
+    align-items: center;
+}
+
+.nav_small {
+    display: flex;
+    flex-direction: row;
+    padding-right: 4px;
+    padding-left: 4px;
+}
