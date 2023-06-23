@@ -113,7 +113,8 @@ nav li:hover {
     background-image: radial-gradient(
         circle at 50% 50%,
         #ffffff 0%,
-        #dbdbdb 65%,
+        #ffffff 55%,
+        #dbdbdb 70%,
         #808080 85%
     );
     width: 30%;
@@ -164,13 +165,18 @@ nav li:hover {
     margin-right: auto;
 }
 
+.home-about h2 {
+    text-align: center;
+    font-size: 48px;
+}
+
 /* \/ Under here needs fixing \/ */
 
-.about {
+/* .about {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* background-color: var(--background-color); */
+    background-color: var(--background-color);
     color: var(--text-color);
     max-width: 50%;
     font-family: var(--font-family);
@@ -218,4 +224,4 @@ nav li:hover {
     flex-direction: row;
     padding-right: 4px;
     padding-left: 4px;
-}
+} */
