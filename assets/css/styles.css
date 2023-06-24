@@ -11,6 +11,8 @@
     --transition: 0.3s;
 }
 
+/* General Properties */
+
 html {
     scroll-behavior: smooth;
 }
@@ -38,6 +40,8 @@ a:hover {
     color: var(--secondary-color);
 }
 
+/* Navbar */
+
 .active {
     background-image: linear-gradient(
         90deg,
@@ -56,7 +60,7 @@ a:hover {
 nav {
     position: sticky;
     top: 0;
-    z-index: 1;
+    z-index: 2;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -97,6 +101,8 @@ nav li:hover {
     transform: translateY(-2px);
 }
 
+/* Hero Section */
+
 .hero {
     display: flex;
     align-items: center;
@@ -117,8 +123,8 @@ nav li:hover {
         #dbdbdb 70%,
         #808080 85%
     );
-    width: 30%;
-    height: 30%;
+    width: 31%;
+    height: 31%;
     border: #000000;
     border-style: solid;
     border-width: 2px;
@@ -156,13 +162,17 @@ nav li:hover {
     font-weight: 600;
 }
 
+/* About Section */
+
 .home-about {
     background-color: rgba(210, 210, 210, 0.5);
     padding: 20px 60px;
     margin-top: var(--margin);
     margin-bottom: var(--margin);
-    margin-left: auto;
-    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 30px;
 }
 
 .home-about h2 {
@@ -170,20 +180,57 @@ nav li:hover {
     font-size: 48px;
 }
 
-/* \/ Under here needs fixing \/ */
-
-/* .about {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    max-width: 50%;
-    font-family: var(--font-family);
-    font-size: var(--font-size);
+.home-about h3 {
+    font-size: 24px;
+    text-decoration: underline;
 }
 
-.footer {
+.home-about p {
+    font-size: 16px;
+    font-family: var(--text-font);
+}
+.home-about-parts {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-about-part {
+    color: #ffffff;
+    width: 50%;
+    height: 80%;
+    max-width: 500px;
+    margin: 10px 30px;
+    padding: 20px;
+    background-color: #000000;
+}
+
+.home-about a {
+    padding: 15px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #000000;
+    border-width: 2px;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: #000000;
+    transition: var(--transition);
+}
+
+.home-about a:hover {
+    color: #000000;
+    background-color: #ffffff;
+}
+
+/* TODO: */
+
+.home-projects {
+}
+
+/* \/ Under here needs fixing \/ */
+
+/*.footer {
     display: flex;
     flex-direction: row;
     align-items: center;
