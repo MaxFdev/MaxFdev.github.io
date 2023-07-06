@@ -6,7 +6,7 @@
     --background-color: rgba(5, 5, 5, 0.1);
     --font-family: "Arial", sans-serif;
     --text-font: "Noto Sans", sans-serif;
-    --font-size: 14px;
+    --font-size: 16px;
     --margin: 80px;
     --transition: 0.3s;
 }
@@ -49,8 +49,8 @@ a:hover {
         rgb(70, 150, 130, 0.5),
         rgba(130, 100, 220, 0.5)
     );
-    border-radius: 20px;
-    padding: 10px;
+    border-radius: 24px;
+    padding: 8px;
 }
 
 .active:hover {
@@ -64,8 +64,8 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 50px;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    padding: 8px 48px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-bottom: var(--margin);
     background-color: #ffffff;
 }
@@ -76,8 +76,8 @@ nav h1 {
     font-style: italic;
     font-weight: bold;
     text-shadow: #000000ba 2px 1px 0px;
-    margin: 5px;
-    padding: 2px;
+    margin: 8px;
+    padding: 4px;
 }
 
 nav ul {
@@ -86,9 +86,9 @@ nav ul {
     justify-content: space-evenly;
     list-style-type: none;
     align-items: center;
-    gap: 60px;
-    padding: 2px;
-    margin: 5px;
+    gap: 56px;
+    padding: 4px;
+    margin: 8px;
 }
 
 nav li {
@@ -107,7 +107,7 @@ nav li:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 60px;
+    gap: 56px;
     max-width: 80%;
     margin-top: var(--margin);
     margin-bottom: var(--margin);
@@ -140,15 +140,15 @@ nav li:hover {
 .hero-about {
     max-width: 600px;
     width: 40%;
-    padding: 15px;
-    border-radius: 10px;
+    padding: 16px;
+    border-radius: 8px;
     box-shadow: 0px 2px 15px 2px var(--background-color);
     transition: var(--transition);
     background-color: #ffffff;
 }
 
 .hero-about:hover {
-    box-shadow: 0px 4px 30px 4px var(--background-color);
+    box-shadow: 0px 4px 32px 4px var(--background-color);
 }
 
 .hero-about h2 {
@@ -166,13 +166,13 @@ nav li:hover {
 
 .home-about {
     background-color: rgba(210, 210, 210, 0.5);
-    padding: 20px 60px;
+    padding: 24px 64px;
     margin-top: var(--margin);
     margin-bottom: var(--margin);
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: 30px;
+    row-gap: 32px;
 }
 
 .home-about h2 {
@@ -199,20 +199,20 @@ nav li:hover {
     color: #ffffff;
     width: 50%;
     height: 80%;
-    max-width: 500px;
-    margin: 10px 30px;
-    padding: 20px;
+    max-width: 480px;
+    margin: 8px 32px;
+    padding: 24px;
     background-color: #000000;
 }
 
 .home-about a {
-    padding: 15px;
+    padding: 16px;
     color: #ffffff;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
     background-color: #000000;
     border-width: 2px;
-    border-radius: 20px;
+    border-radius: 24px;
     border-style: solid;
     border-color: #000000;
     transition: var(--transition);
