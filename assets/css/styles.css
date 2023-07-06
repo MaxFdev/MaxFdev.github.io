@@ -11,7 +11,7 @@
     --transition: 0.3s;
 }
 
-/* General Properties */
+/** General Properties */
 
 html {
     scroll-behavior: smooth;
@@ -40,7 +40,7 @@ a:hover {
     color: var(--secondary-color);
 }
 
-/* Navbar */
+/** Navbar */
 
 .active {
     background-image: linear-gradient(
@@ -101,30 +101,30 @@ nav li:hover {
     transform: translateY(-2px);
 }
 
-/* Hero Section */
+/** Hero Section */
 
 .hero {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 56px;
-    max-width: 80%;
+    /* width: 80%; */
     margin-top: var(--margin);
     margin-bottom: var(--margin);
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .hero img {
-    background-image: radial-gradient(
+    background-color: rgba(210, 210, 210, 0.5);
+    /* TODO: Add complex background */
+    /* background-image: radial-gradient(
         circle at 50% 50%,
-        #ffffff 0%,
-        #ffffff 55%,
-        #dbdbdb 70%,
-        #808080 85%
-    );
-    width: 31%;
-    height: 31%;
+        #fbffe6 0%,
+        #fffafa 55%,
+        #fff9eb 70%,
+        #ffe0bc 85%
+    ); */
+    width: 480px;
+    height: 480px;
     border: #000000;
     border-style: solid;
     border-width: 2px;
@@ -138,8 +138,9 @@ nav li:hover {
 }
 
 .hero-about {
+    min-width: 600px;
     max-width: 600px;
-    width: 40%;
+    height: 456px;
     padding: 16px;
     border-radius: 8px;
     box-shadow: 0px 2px 15px 2px var(--background-color);
@@ -153,7 +154,7 @@ nav li:hover {
 
 .hero-about h2 {
     font-size: 24px;
-    font-weight: 700;
+    padding-bottom: 4px;
 }
 
 .hero-about p {
@@ -162,7 +163,7 @@ nav li:hover {
     font-weight: 600;
 }
 
-/* About Section */
+/** About Section */
 
 .home-about {
     background-color: rgba(210, 210, 210, 0.5);
@@ -183,6 +184,7 @@ nav li:hover {
 .home-about h3 {
     font-size: 24px;
     text-decoration: underline;
+    padding-bottom: 12px;
 }
 
 .home-about p {
@@ -197,15 +199,17 @@ nav li:hover {
 
 .home-about-part {
     color: #ffffff;
-    width: 50%;
-    height: 80%;
-    max-width: 480px;
+    width: 480px;
+    height: 436px;
     margin: 8px 32px;
     padding: 24px;
     background-color: #000000;
 }
 
 .home-about a {
+    text-align: center;
+    width: 200px;
+    height: 52px;
     padding: 16px;
     color: #ffffff;
     font-size: 16px;
@@ -223,7 +227,7 @@ nav li:hover {
     background-color: #ffffff;
 }
 
-/* TODO: */
+/* TODO: Next section */
 
 .home-projects {
 }
