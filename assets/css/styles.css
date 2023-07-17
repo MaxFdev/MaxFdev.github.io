@@ -248,6 +248,11 @@ nav li:hover {
     padding: 2px 0px;
 }
 
+.home-projects h4 {
+    font-weight: 800;
+    margin: 8px 0px;
+}
+
 .home-projects p {
     font-size: 16px;
     font-weight: 600;
@@ -265,6 +270,7 @@ nav li:hover {
     display: flex;
     justify-content: space-evenly;
     padding: 0px 80px;
+    gap: 8px;
 }
 
 .home-projects-part {
@@ -272,75 +278,94 @@ nav li:hover {
     box-shadow: 0px 4px 16px 4px var(--background-color);
     border-radius: 8px;
     width: 512px;
+    height: fit-content;
 }
 
 .home-projects-descriptor1 {
-    height: 240px;
     background-color: #00ffa2;
     padding: 8px;
     border-radius: 8px;
 }
 
 .home-projects-descriptor2 {
-    height: 240px;
-    background-color: #ccc2ff;
-    padding: 8px;
-    border-radius: 8px;
-}
-
-.home-projects-descriptor3 {
-    height: 240px;
     background-color: #90dcff;
     padding: 8px;
     border-radius: 8px;
 }
 
-.home-projects a {
+.home-projects-descriptor3 {
+    background-color: #ccc2ff;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.home-projects-tags {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    margin-bottom: 16px;
+}
+.home-projects-tags li {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 4px;
+    height: 28px;
+    border-color: #000000;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 24px;
+}
+
+.home-projects-part a {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    border-radius: 8px;
+}
+
+.home-projects-part a p {
+    color: #ffffff;
+    background-color: #000000;
+    padding: 4px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #000000;
+    border-radius: 8px;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.home-projects-part a p:hover {
+    color: #000000;
+    background-color: #00000000;
+}
+
+.home-projects-button {
+    color: #ffffff;
+    font-size: 24px;
+    background-color: #05152f;
+    padding: 16px;
+    margin: 20px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #000000;
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+.home-projects-button:hover {
+    color: #000000;
+    background-color: #9274be;
+    margin: 16px;
+    padding: 20px;
 }
 
 /* TODO: Next section */
 
-/* \/ Under here needs fixing \/ */
-
-/*.footer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    padding: 5px;
-    background-color: var(--footer-bg-color);
-    color: var(--text-color);
-}
-
-.footer .footer_section {
+.home-skills {
+    background-color: #c7c7c7;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
 }
-
-.footer .footer_info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    font-size: var(--font-size);
-}
-
-.footer .footer_list {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    list-style-type: none;
-    align-items: center;
-}
-
-.nav_small {
-    display: flex;
-    flex-direction: row;
-    padding-right: 4px;
-    padding-left: 4px;
-} */
