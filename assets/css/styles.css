@@ -364,8 +364,17 @@ nav li:hover {
 /* TODO: Next section */
 
 .home-skills {
+    padding: 24px 0px;
+    gap: 80px;
+    margin-top: var(--margin);
+    /* margin-bottom: var(--margin); */
     background-color: #c7c7c7;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.home-skills h2 {
+    text-align: center;
+    font-size: 48px;
 }
