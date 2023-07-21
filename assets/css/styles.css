@@ -40,6 +40,10 @@ a:hover {
     color: var(--secondary-color);
 }
 
+p {
+    font-family: var(--text-font);
+}
+
 /** --------------- Navbar --------------- */
 
 .active {
@@ -362,16 +366,13 @@ nav li:hover {
     padding: 20px;
 }
 
-/* TODO: Next section */
-
 /** --------------- Home Skills Section --------------- */
 
 .home-skills {
     padding: 24px 0px;
     gap: 80px;
     margin-top: var(--margin);
-    /* margin-bottom: var(--margin); */
-    background-color: rgba(160, 160, 160, 0.5);
+    background-color: rgba(210, 210, 210, 0.5);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -401,6 +402,14 @@ nav li:hover {
     transform: scale3d(0.85, 0.85, 1);
 }
 
+.home-skills figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+}
+
 .home-skills figcaption {
     font-family: var(--font-family);
     font-size: 10px;
@@ -425,7 +434,7 @@ nav li:hover {
     align-items: center;
     border-width: 2px;
     border-radius: 16px;
-    gap: 8px;
+    gap: 32px;
     padding: 32px;
     background-color: #000000;
 }
@@ -437,7 +446,7 @@ nav li:hover {
     align-items: center;
     border-width: 2px;
     border-radius: 16px;
-    gap: 8px;
+    gap: 32px;
     padding: 32px;
     background-color: #000000;
 }
@@ -458,8 +467,8 @@ nav li:hover {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 32px;
-    width: 600px;
+    gap: 28px;
+    width: 620px;
 }
 
 .home-skills-button {
@@ -477,4 +486,104 @@ nav li:hover {
 .home-skills-button:hover {
     color: #000000;
     background-color: #ffffff;
+}
+
+/* TODO: Next section */
+
+/** --------------- Home Contact Section --------------- */
+
+.home-contact {
+    margin-top: var(--margin);
+    margin-bottom: var(--margin);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+}
+
+.home-contact h2 {
+    font-size: 48px;
+}
+
+.home-contact h3 {
+    font-size: 36px;
+    text-decoration: underline;
+}
+
+.home-contact p {
+    font-size: 28px;
+}
+
+.home-contact a {
+    align-self: start;
+    text-align: center;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 4px;
+    background-color: #000000;
+    border-color: #000000;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.home-contact a:hover {
+    background-color: #00000000;
+    color: #000000;
+}
+
+.home-contact-cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+
+.home-contact-email {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 420px;
+    height: 200px;
+    padding: 8px;
+    background-color: #ff7777;
+    border-radius: 8px;
+    box-shadow: 0px 4px 16px 4px var(--background-color);
+}
+
+.home-contact-socials {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 420px;
+    height: 200px;
+    padding: 8px;
+    background-color: #6cd5ff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 16px 4px var(--background-color);
+}
+
+/** --------------- Home Footer Section --------------- */
+
+.home-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 0px;
+}
+
+.home-footer-message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 420px;
+    border-top-style: dashed;
+    border-top-color: #888888;
+    border-top-width: 1px;
+}
+
+.home-footer-message p {
+    font-size: 12px;
 }
