@@ -481,7 +481,7 @@ nav li:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 32px;
+    gap: 64px;
 }
 
 .home-contact h2 {
@@ -550,10 +550,10 @@ nav li:hover {
 /** --------------- Home Footer Section --------------- */
 
 .home-footer {
+    margin-top: var(--margin);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 4px 0px;
 }
 
 .home-footer-message {
@@ -564,6 +564,7 @@ nav li:hover {
     border-top-style: dashed;
     border-top-color: #888888;
     border-top-width: 1px;
+    padding: 4px 0px;
 }
 
 .home-footer-message p {
