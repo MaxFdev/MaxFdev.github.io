@@ -4,7 +4,7 @@
     --primary-color: #0080ff;
     --secondary-color: #00d0ff;
     --background-color: rgba(5, 5, 5, 0.1);
-    --font-family: "Arial", sans-serif;
+    --font-family: "Trebuchet MS", Helvetica, sans-serif;
     --text-font: "Noto Sans", sans-serif;
     --font-size: 16px;
     --margin: 80px;
@@ -27,6 +27,15 @@ body {
     font-family: var(--font-family);
 }
 
+h2 {
+    font-size: 48px;
+    text-align: center;
+}
+
+p {
+    font-family: var(--text-font);
+}
+
 ul {
     list-style-type: none;
 }
@@ -40,11 +49,48 @@ a:hover {
     color: var(--secondary-color);
 }
 
-p {
-    font-family: var(--text-font);
+/** --------------- Navbar --------------- */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 48px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: var(--margin);
+    background-color: #ffffff;
 }
 
-/** --------------- Navbar --------------- */
+nav h1 {
+    color: var(--primary-color);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 32px;
+    font-style: italic;
+    font-weight: 700;
+    text-shadow: #000000cb 2px 1px 0px;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 56px;
+}
+
+nav li {
+    font-size: 24px;
+    transition: var(--transition);
+}
+
+nav li:hover {
+    color: var(--secondary-color);
+    transform: translateY(-2px);
+}
 
 .active {
     background-image: linear-gradient(
@@ -61,77 +107,26 @@ p {
     color: var(--primary-color);
 }
 
-nav {
-    position: sticky;
-    top: 0;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 8px 48px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: var(--margin);
-    background-color: #ffffff;
-}
-
-nav h1 {
-    color: var(--primary-color);
-    font-size: 32px;
-    font-style: italic;
-    font-weight: bold;
-    text-shadow: #000000ba 2px 1px 0px;
-    margin: 8px;
-    padding: 4px;
-}
-
-nav ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    list-style-type: none;
-    align-items: center;
-    gap: 56px;
-    padding: 4px;
-    margin: 8px;
-}
-
-nav li {
-    font-size: 24px;
-    transition: var(--transition);
-}
-
-nav li:hover {
-    color: var(--secondary-color);
-    transform: translateY(-2px);
-}
-
 /** --------------- Home Hero Section --------------- */
 
 .hero {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 56px;
+    gap: 64px;
     margin-top: var(--margin);
     margin-bottom: var(--margin);
 }
 
 .hero img {
-    background-color: rgba(210, 210, 210, 0.5);
-    /* TODO: Add complex background */
-    /* background-image: radial-gradient(
-        circle at 50% 50%,
-        #fbffe6 0%,
-        #fffafa 55%,
-        #fff9eb 70%,
-        #ffe0bc 85%
-    ); */
-    width: 480px;
-    height: 480px;
+    background-image: url("../images/background.jpeg");
+    width: 400px;
+    height: 400px;
     border: #000000;
     border-style: solid;
     border-width: 2px;
     border-radius: 50%;
+    box-shadow: 0px 1px 4px 1px var(--background-color);
     transition: var(--transition);
 }
 
@@ -140,13 +135,24 @@ nav li:hover {
     box-shadow: 0px 2px 8px 2px var(--background-color);
 }
 
+.hero-about h2 {
+    text-align: left;
+    font-size: 36px;
+}
+
+.hero-about p {
+    font-weight: 600;
+}
+
 .hero-about {
-    min-width: 600px;
-    max-width: 600px;
-    height: 456px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 600px;
+    height: 360px;
     padding: 16px;
     border-radius: 8px;
-    box-shadow: 0px 2px 15px 2px var(--background-color);
+    box-shadow: 0px 2px 16px 2px var(--background-color);
     transition: var(--transition);
     background-color: #ffffff;
 }
@@ -155,77 +161,57 @@ nav li:hover {
     box-shadow: 0px 4px 32px 4px var(--background-color);
 }
 
-.hero-about h2 {
-    font-size: 28px;
-    padding-bottom: 4px;
-}
-
-.hero-about p {
-    font-family: var(--text-font);
-    font-size: 16px;
-    font-weight: 600;
-}
-
 /** --------------- Home About Section --------------- */
 
 .home-about {
     background-color: rgba(210, 210, 210, 0.5);
-    padding: 40px 64px;
+    padding: 64px 0px;
     margin-top: var(--margin);
     margin-bottom: var(--margin);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 32px;
-}
-
-.home-about h2 {
-    text-align: center;
-    font-size: 48px;
+    gap: 64px;
 }
 
 .home-about h3 {
     font-size: 24px;
     text-decoration: underline;
-    padding-bottom: 12px;
 }
 
-.home-about p {
-    font-size: 16px;
-    font-family: var(--text-font);
-}
 .home-about-parts {
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 64px;
 }
 
 .home-about-part {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
     color: #ffffff;
     width: 480px;
-    height: 436px;
-    margin: 8px 32px;
     padding: 24px;
     background-color: #000000;
+    border-radius: 8px;
 }
 
 .home-about a {
     text-align: center;
-    width: 200px;
-    height: 52px;
     padding: 16px;
     color: #ffffff;
-    font-size: 16px;
+    font-size: 24px;
     font-weight: 600;
     background-color: #000000;
     border-width: 2px;
-    border-radius: 24px;
+    border-radius: 8px;
     border-style: solid;
     border-color: #000000;
     transition: var(--transition);
 }
 
 .home-about a:hover {
+    transform: scale(1.2, 1.2);
     color: #000000;
     background-color: #ffffff;
 }
@@ -233,7 +219,6 @@ nav li:hover {
 /** --------------- Home Projects Section --------------- */
 
 .home-projects {
-    padding: 24px 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -242,25 +227,19 @@ nav li:hover {
     margin-bottom: var(--margin);
 }
 
-.home-projects h2 {
-    text-align: center;
-    font-size: 48px;
-}
-
 .home-projects h3 {
     font-size: 28px;
-    padding: 2px 0px;
+    margin-bottom: 16px;
 }
 
 .home-projects h4 {
     font-weight: 800;
-    margin: 8px 0px;
+    margin-top: 16px;
+    margin-bottom: 8px;
 }
 
 .home-projects p {
-    font-size: 16px;
     font-weight: 600;
-    font-family: var(--text-font);
 }
 
 .home-projects img {
@@ -269,10 +248,42 @@ nav li:hover {
     height: 288px;
 }
 
-.home-projects-parts {
-    /* width: 90%; */
+.home-projects-tags li {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 4px;
+    border-color: #000000;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 24px;
+}
+
+.home-projects-part a {
     display: flex;
-    /* justify-content: space-between; */
+    align-items: center;
+    border-radius: 8px;
+}
+
+.home-projects-part a p {
+    color: #ffffff;
+    background-color: #000000;
+    padding: 4px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #000000;
+    border-radius: 8px;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.home-projects-part a p:hover {
+    color: #000000;
+    background-color: #00000000;
+}
+
+.home-projects-parts {
+    display: flex;
     align-items: center;
     justify-items: center;
     gap: 64px;
@@ -283,7 +294,6 @@ nav li:hover {
     box-shadow: 0px 4px 16px 4px var(--background-color);
     border-radius: 8px;
     width: 512px;
-    height: fit-content;
 }
 
 .home-projects-descriptor1 {
@@ -306,64 +316,27 @@ nav li:hover {
 
 .home-projects-tags {
     display: flex;
-    flex-direction: row;
     gap: 4px;
     margin-bottom: 16px;
-}
-.home-projects-tags li {
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: 600;
-    padding: 4px;
-    height: 28px;
-    border-color: #000000;
-    border-width: 2px;
-    border-style: solid;
-    border-radius: 24px;
-}
-
-.home-projects-part a {
-    display: flex;
-    align-items: center;
-    width: fit-content;
-    border-radius: 8px;
-}
-
-.home-projects-part a p {
-    color: #ffffff;
-    background-color: #000000;
-    padding: 4px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: #000000;
-    border-radius: 8px;
-    text-align: center;
-    transition: var(--transition);
-}
-
-.home-projects-part a p:hover {
-    color: #000000;
-    background-color: #00000000;
 }
 
 .home-projects-button {
     color: #ffffff;
     font-size: 24px;
+    font-weight: 600;
     background-color: #05152f;
     padding: 16px;
-    margin: 20px;
     border-width: 2px;
     border-style: solid;
     border-color: #000000;
-    border-radius: 4px;
+    border-radius: 8px;
     transition: var(--transition);
 }
 
 .home-projects-button:hover {
     color: #000000;
     background-color: #9274be;
-    margin: 16px;
-    padding: 20px;
+    transform: scale(1.2, 1.2);
 }
 
 /** --------------- Home Skills Section --------------- */
@@ -376,11 +349,6 @@ nav li:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.home-skills h2 {
-    text-align: center;
-    font-size: 48px;
 }
 
 .home-skills h3 {
@@ -448,7 +416,7 @@ nav li:hover {
 .home-skills-parts {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     gap: 8px;
 }
@@ -482,10 +450,6 @@ nav li:hover {
     align-items: center;
     justify-content: center;
     gap: 64px;
-}
-
-.home-contact h2 {
-    font-size: 48px;
 }
 
 .home-contact h3 {
