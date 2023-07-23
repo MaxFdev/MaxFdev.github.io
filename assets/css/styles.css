@@ -32,6 +32,10 @@ h2 {
     text-align: center;
 }
 
+h3 {
+    font-size: 28px;
+}
+
 p {
     font-family: var(--text-font);
 }
@@ -113,7 +117,6 @@ nav li:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 64px;
     margin-top: var(--margin);
     margin-bottom: var(--margin);
 }
@@ -144,6 +147,13 @@ nav li:hover {
     font-weight: 600;
 }
 
+.home-hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 64px;
+}
+
 .hero-about {
     display: flex;
     flex-direction: column;
@@ -152,9 +162,9 @@ nav li:hover {
     height: 360px;
     padding: 16px;
     border-radius: 8px;
+    background-color: #ffffff;
     box-shadow: 0px 2px 16px 2px var(--background-color);
     transition: var(--transition);
-    background-color: #ffffff;
 }
 
 .hero-about:hover {
@@ -175,25 +185,7 @@ nav li:hover {
 }
 
 .home-about h3 {
-    font-size: 24px;
     text-decoration: underline;
-}
-
-.home-about-parts {
-    display: flex;
-    align-items: center;
-    gap: 64px;
-}
-
-.home-about-part {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    color: #ffffff;
-    width: 480px;
-    padding: 24px;
-    background-color: #000000;
-    border-radius: 8px;
 }
 
 .home-about a {
@@ -216,6 +208,23 @@ nav li:hover {
     background-color: #ffffff;
 }
 
+.home-about-parts {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+}
+
+.home-about-part {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    color: #ffffff;
+    width: 480px;
+    padding: 24px;
+    background-color: #000000;
+    border-radius: 8px;
+}
+
 /** --------------- Home Projects Section --------------- */
 
 .home-projects {
@@ -227,15 +236,8 @@ nav li:hover {
     margin-bottom: var(--margin);
 }
 
-.home-projects h3 {
-    font-size: 28px;
-    margin-bottom: 16px;
-}
-
 .home-projects h4 {
-    font-weight: 800;
-    margin-top: 16px;
-    margin-bottom: 8px;
+    font-size: 20px;
 }
 
 .home-projects p {
@@ -291,24 +293,38 @@ nav li:hover {
 
 .home-projects-part {
     background-color: rgba(0, 0, 0, 0.065);
-    box-shadow: 0px 4px 16px 4px var(--background-color);
     border-radius: 8px;
     width: 512px;
+    box-shadow: 0px 2px 16px 2px var(--background-color);
+    transition: var(--transition);
+}
+
+.home-projects-part:hover {
+    box-shadow: 0px 8px 32px 8px var(--background-color);
 }
 
 .home-projects-descriptor1 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
     background-color: #00ffa2;
     padding: 8px;
     border-radius: 8px;
 }
 
 .home-projects-descriptor2 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
     background-color: #90dcff;
     padding: 8px;
     border-radius: 8px;
 }
 
 .home-projects-descriptor3 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
     background-color: #ccc2ff;
     padding: 8px;
     border-radius: 8px;
@@ -317,7 +333,6 @@ nav li:hover {
 .home-projects-tags {
     display: flex;
     gap: 4px;
-    margin-bottom: 16px;
 }
 
 .home-projects-button {
@@ -497,6 +512,11 @@ nav li:hover {
     background-color: #ff7777;
     border-radius: 8px;
     box-shadow: 0px 4px 16px 4px var(--background-color);
+    transition: var(--transition);
+}
+
+.home-contact-email:hover {
+    box-shadow: 0px 8px 32px 8px var(--background-color);
 }
 
 .home-contact-socials {
@@ -509,6 +529,11 @@ nav li:hover {
     background-color: #6cd5ff;
     border-radius: 8px;
     box-shadow: 0px 4px 16px 4px var(--background-color);
+    transition: var(--transition);
+}
+
+.home-contact-socials:hover {
+    box-shadow: 0px 8px 32px 8px var(--background-color);
 }
 
 /** --------------- Home Footer Section --------------- */
@@ -533,4 +558,9 @@ nav li:hover {
 
 .home-footer-message p {
     font-size: 12px;
+}
+
+/** --------------- Tablet Size --------------- */
+
+@media screen and (max-width: 720px) {
 }
