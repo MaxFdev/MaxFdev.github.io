@@ -254,6 +254,7 @@ nav li:hover {
 .home-projects img {
     border-radius: 8px;
     width: 384px;
+    transition: var(--transition);
 }
 
 .home-projects-descriptor {
