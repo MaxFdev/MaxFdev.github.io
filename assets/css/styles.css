@@ -113,7 +113,7 @@ nav li:hover {
 
 /** --------------- Home Hero Section --------------- */
 
-.hero {
+.home-hero {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -128,7 +128,7 @@ nav li:hover {
     gap: var(--gap);
 }
 
-.hero img {
+.home-hero img {
     background-image: url("../images/background.jpeg");
     width: 400px;
     height: 400px;
@@ -137,17 +137,16 @@ nav li:hover {
     transition: var(--transition);
 }
 
-.hero img:hover {
+.home-hero img:hover {
     transform: translateY(-4px);
     box-shadow: 0px 4px 8px 4px var(--background-color);
 }
 
-.hero-about {
+.home-hero-about {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     width: 600px;
-    height: 360px;
     padding: 16px;
     border-radius: 8px;
     background-color: #ffffff;
@@ -155,16 +154,16 @@ nav li:hover {
     transition: var(--transition);
 }
 
-.hero-about:hover {
+.home-hero-about:hover {
     box-shadow: 0px 0px 8px 8px var(--background-color);
 }
 
-.hero-about h2 {
+.home-hero-about h2 {
     text-align: left;
     font-size: 36px;
 }
 
-.hero-about p {
+.home-hero-about p {
     font-weight: 600;
 }
 
@@ -240,7 +239,7 @@ nav li:hover {
 
 .home-projects-part {
     border-radius: 8px;
-    width: 384px;
+    width: 420px;
     box-shadow: 0px 0px 8px 4px var(--background-color),
         inset 0px 0px 8px 100vw var(--background-color);
     transition: var(--transition);
@@ -253,7 +252,7 @@ nav li:hover {
 
 .home-projects img {
     border-radius: 8px;
-    width: 384px;
+    width: 420px;
     transition: var(--transition);
 }
 
@@ -538,12 +537,95 @@ div.socials {
 
 /** ------------------------------ Laptop Size ------------------------------ */
 
-@media (max-width: 1280px) {
+@media (max-width: 1420px) {
 }
 
 /** ------------------------------ Tablet Size ------------------------------ */
 
 @media (max-width: 720px) {
+    :root {
+        --margin: 28px;
+        --gap: 28px;
+    }
+
+    h2 {
+        font-size: 40px;
+    }
+
+    /** Hero */
+
+    .home-hero {
+        flex-direction: column;
+    }
+
+    .home-hero img:hover {
+        transform: none;
+        box-shadow: 0px 0px 8px 2px var(--background-color);
+    }
+
+    .home-hero-about {
+        width: 420px;
+        transition: none;
+        gap: 8px;
+    }
+
+    .home-hero-about h2 {
+        text-align: center;
+    }
+
+    .home-hero-about:hover {
+        box-shadow: 0px 0px 8px 4px var(--background-color);
+    }
+
+    /** About */
+
+    .home-about {
+        padding: var(--gap) 0px;
+        gap: var(--gap);
+    }
+
+    .home-about-parts {
+        flex-direction: column;
+    }
+
+    .home-about-part {
+        width: 420px;
+    }
+
+    /** Projects */
+
+    .home-projects {
+        gap: var(--gap);
+    }
+
+    .home-projects-parts {
+        flex-direction: column;
+    }
+
+    /** Skills */
+
+    .home-skills {
+        padding: var(--gap);
+        gap: var(--gap);
+    }
+
+    .home-skills-part-section {
+        flex-direction: column;
+    }
+
+    .home-skills-parts {
+        gap: var(--gap);
+    }
+
+    /** Contact */
+
+    .home-contact {
+        gap: var(--gap);
+    }
+
+    .home-contact-cards {
+        flex-direction: column;
+    }
 }
 
 /** ------------------------------ Phone Size ------------------------------ */
