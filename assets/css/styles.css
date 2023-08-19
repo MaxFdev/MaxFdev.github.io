@@ -22,6 +22,7 @@ html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: var(--transition);
 }
 
 body {
@@ -289,6 +290,7 @@ div.website {
 
 .home-projects ul {
     display: flex;
+    flex-wrap: wrap;
     gap: 4px;
 }
 
@@ -338,7 +340,8 @@ div.website {
 /** --------------- Home Skills Section --------------- */
 
 .home-skills {
-    padding: 80px 0px;
+    padding-bottom: 80px;
+    padding-top: 70px;
     gap: 80px;
     margin-top: var(--margin);
     background-color: var(--background-color);
@@ -420,7 +423,7 @@ div.website {
     font-weight: 700;
     text-align: center;
     background-color: #000000;
-    width: 420px;
+    width: 100%;
     padding: 24px;
     border: 2px solid #000000;
     border-radius: 8px;
@@ -538,11 +541,63 @@ div.socials {
 /** ------------------------------ Laptop Size ------------------------------ */
 
 @media (max-width: 1420px) {
+    /** Hero */
+
+    .home-hero-about {
+        width: clamp(500px, 50vw, 600px);
+    }
+
+    /** About */
+
+    .home-about-part {
+        width: clamp(420px, 41vw, 480px);
+    }
+
+    /** Projects */
+
+    .home-projects {
+        gap: var(--gap);
+    }
+
+    .home-projects-parts {
+        gap: clamp(20px, 2vw, 28px);
+    }
+
+    .home-projects-part,
+    .home-projects img {
+        width: clamp(302px, 28vw, 420px);
+    }
+
+    .home-projects p {
+        font-size: 14px;
+    }
+
+    /** Skills */
+
+    .home-skills {
+        padding-top: calc(var(--gap) - 10px);
+        padding-bottom: var(--gap);
+        gap: var(--gap);
+    }
+
+    .home-skills-part-section {
+        gap: clamp(20px, 1.75vw, 32px);
+        flex-wrap: wrap;
+    }
+
+    .home-skills-part {
+        gap: 24px;
+        padding: 20px;
+    }
+
+    .home-skills-icons {
+        gap: 24px;
+    }
 }
 
 /** ------------------------------ Tablet Size ------------------------------ */
 
-@media (max-width: 720px) {
+@media (max-width: 1024px) {
     :root {
         --margin: 28px;
         --gap: 28px;
@@ -550,6 +605,13 @@ div.socials {
 
     h2 {
         font-size: 40px;
+    }
+
+    /** Navbar (TMP) */
+
+    /* TODO: Fix This! */
+    nav ul {
+        flex-wrap: wrap;
     }
 
     /** Hero */
@@ -588,10 +650,6 @@ div.socials {
         flex-direction: column;
     }
 
-    .home-about-part {
-        width: 420px;
-    }
-
     /** Projects */
 
     .home-projects {
@@ -600,6 +658,15 @@ div.socials {
 
     .home-projects-parts {
         flex-direction: column;
+    }
+
+    .home-projects-part,
+    .home-projects img {
+        width: 420px;
+    }
+
+    .home-projects p {
+        font-size: var(--font-size);
     }
 
     /** Skills */
@@ -630,5 +697,5 @@ div.socials {
 
 /** ------------------------------ Phone Size ------------------------------ */
 
-@media (max-width: 480px) {
+@media (max-width: 580px) {
 }
