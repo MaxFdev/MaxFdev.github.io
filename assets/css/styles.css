@@ -208,7 +208,7 @@ nav li:hover {
     height: 64px;
     padding: 16px;
     color: #ffffff;
-    font-size: 24px;
+    font-size: 28px;
     font-weight: 600;
     background-color: #000000;
     border: 2px solid #000000;
@@ -325,7 +325,7 @@ div.website {
     gap: 4px;
     height: 64px;
     color: #000000;
-    font-size: 24px;
+    font-size: 28px;
     font-weight: 600;
     background-color: #a89abe;
     padding: 16px;
@@ -419,13 +419,17 @@ div.website {
     color: #ffffff;
 }
 
-.home-skills a {
+.home-skills-button span:nth-of-type(2) {
+    display: none;
+}
+
+.home-skills-button {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 80px;
     gap: 4px;
-    font-size: 24px;
+    font-size: 28px;
     font-weight: 700;
     text-align: center;
     background-color: #000000;
@@ -436,7 +440,7 @@ div.website {
     color: #ffffff;
 }
 
-.home-skills a:hover {
+.home-skills-button:hover {
     transform: scale(0.9);
     color: #ffffff;
     background-color: #02a5ff;
@@ -521,7 +525,7 @@ div.socials {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 420px;
+    width: clamp(360px, 96vw, 420px);
     border-top-style: dashed;
     border-top-color: #888888;
     border-top-width: 1px;
@@ -596,6 +600,13 @@ div.socials {
 
     .home-skills-icons {
         gap: 24px;
+    }
+
+    .home-skills-button span:nth-of-type(1) {
+        display: none;
+    }
+    .home-skills-button span:nth-of-type(2) {
+        display: block;
     }
 }
 
@@ -697,6 +708,27 @@ div.socials {
 
     .home-skills-icons {
         width: calc(clamp(360px, 92vw, 600px) - 32px);
+    }
+
+    .home-skills-button {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        gap: 4px;
+        height: 64px;
+        width: auto;
+        padding: 16px;
+        color: #ffffff;
+        font-size: 28px;
+        font-weight: 600;
+        background-color: #000000;
+        border: 2px solid #000000;
+        border-radius: 8px;
+    }
+
+    .home-skills-button:hover {
+        transform: scale(1.1, 1.1);
+        background-color: #02a5ff;
     }
 
     /** Contact */
