@@ -355,6 +355,7 @@ div.website {
 .home-skills-part-section {
     display: flex;
     justify-content: center;
+    width: 98vw;
     gap: var(--gap);
 }
 
