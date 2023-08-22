@@ -423,6 +423,7 @@ div.website {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 80px;
     gap: 4px;
     font-size: 24px;
     font-weight: 700;
@@ -584,6 +585,7 @@ div.socials {
 
     .home-skills-part-section {
         gap: clamp(20px, 1.75vw, 32px);
+        width: 92vw;
         flex-wrap: wrap;
     }
 
@@ -682,6 +684,7 @@ div.socials {
 
     .home-skills-part-section {
         flex-direction: column;
+        width: auto;
     }
 
     .home-skills-parts {
