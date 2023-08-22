@@ -566,7 +566,7 @@ div.socials {
     }
 
     .home-projects-part,
-    .home-project-parts img {
+    .home-projects-parts img {
         width: clamp(302px, 28vw, 420px);
     }
 
@@ -665,7 +665,7 @@ div.socials {
     }
 
     .home-projects-part,
-    .home-project-parts img {
+    .home-projects-parts img {
         width: clamp(360px, 92vw, 600px);
     }
 
