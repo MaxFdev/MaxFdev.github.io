@@ -750,4 +750,9 @@ div.socials {
 /** ------------------------------ Phone Size ------------------------------ */
 
 @media (max-width: 580px) {
+    /** Footer */
+
+    .home-footer-message p {
+        font-size: 10px;
+    }
 }
