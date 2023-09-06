@@ -55,6 +55,9 @@ a:hover {
     color: var(--secondary-color);
 }
 
+span.separator {
+}
+
 /** --------------- Navbar --------------- */
 
 nav {
