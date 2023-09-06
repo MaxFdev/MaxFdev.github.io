@@ -12,7 +12,7 @@ function scrollToSection(event) {
         // Calculate the position to scroll to
         const targetPosition = targetSection.offsetTop - 80;
 
-        // Smoothly scroll to the target position
+        // Scroll to section
         window.scrollTo({
             top: targetPosition
         });
@@ -26,6 +26,8 @@ function scrollToSection(event) {
     // Add the "active" class to the clicked link
     this.classList.add('active');
 }
+
+// Event listeners:
 
 // Attach the scrollToSection function to all links with class "scroll-link"
 const links = document.querySelectorAll('a[href^="#"]');
