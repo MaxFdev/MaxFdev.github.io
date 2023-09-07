@@ -1,3 +1,9 @@
+/*
+ * ---------------------- Nav Bar Functionality (Desktop) 
+*/
+
+// TODO: Make this track with scrolling
+
 // Function to handle smooth scrolling when a link is clicked
 function scrollToSection(event) {
     event.preventDefault(); // Prevent the default link behavior
@@ -27,10 +33,60 @@ function scrollToSection(event) {
     this.classList.add('active');
 }
 
-// Event listeners:
-
 // Attach the scrollToSection function to all links with class "scroll-link"
 const links = document.querySelectorAll('a[href^="#"]');
 links.forEach(link => {
     link.addEventListener('click', scrollToSection);
 });
+
+/*
+ * ---------------------- Nav Bar Functionality (Mobile) 
+*/
+
+// TODO: Make mobile nav menu
+
+/*
+ * ---------------------- Nav Bar style 
+*/
+
+// Nav bar style change after scrolling
+const navElement = document.querySelector('nav');
+
+// Function for switching scroll state
+function updateNavScroll() {
+    if (window.scrollY > 0) {
+        navElement.classList.add('scroll');
+    } else {
+        navElement.classList.remove('scroll');
+    }
+}
+
+// Add event listener to scroll event
+window.addEventListener('scroll', updateNavScroll);
+
+/*
+ * ---------------------- Socials Popup
+*/
+
+// Get popup and close button
+const popup = document.getElementById('social-popup');
+
+// Get socials button
+const socialsTrigger = document.getElementById('socials-button');
+
+// Function for opening popup
+function openPopup() {
+    popup.classList.add('popup');
+    popup.classList.remove('popup-closed');
+    const closeButton = document.getElementById('close-popup');
+    closeButton.addEventListener('click', closePopup);
+}
+
+// Function to close the popup
+function closePopup() {
+    popup.classList.add('popup-closed');
+    popup.classList.remove('popup');
+}
+
+// Event listeners to open and close
+socialsTrigger.addEventListener('click', openPopup);

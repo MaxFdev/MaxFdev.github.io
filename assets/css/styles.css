@@ -55,9 +55,6 @@ a:hover {
     color: var(--secondary-color);
 }
 
-span.separator {
-}
-
 /** --------------- Navbar --------------- */
 
 nav {
@@ -70,9 +67,13 @@ nav {
     justify-content: space-between;
     padding: 0px 48px;
     margin-bottom: var(--margin);
+    background-color: #ffffff;
+    border-bottom: solid 1px #00000000;
+}
+
+nav.scroll {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-bottom: solid 1px #89c4ff95;
-    background-color: #ffffff;
 }
 
 nav h1 {
@@ -500,7 +501,10 @@ div.socials {
     font-size: 28px;
 }
 
-.home-contact a {
+/* TODO: replace temporary socials popup */
+
+.home-contact a,
+.home-contact button {
     align-self: start;
     text-align: center;
     color: #ffffff;
@@ -511,9 +515,60 @@ div.socials {
     border-radius: 8px;
 }
 
-.home-contact a:hover {
+.home-contact a:hover,
+.home-contact button:hover {
+    cursor: pointer;
     background-color: #00000000;
     color: #000000;
+}
+
+.popup-closed {
+    display: none;
+}
+
+.popup {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 4px;
+    position: fixed;
+    max-width: 80vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    width: 30vw;
+    height: 30vh;
+    min-height: 240px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    z-index: 3;
+}
+
+.popup h3 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.popup a {
+    align-self: center;
+}
+
+#close-popup {
+    align-self: center;
+    color: #c40000;
+    border-color: #c40000;
+    background-color: #00000000;
+    margin-top: 20px;
+}
+
+#close-popup:hover {
+    color: #c40000;
+    border-color: #c40000;
+    background-color: #00000000;
+    margin-top: 20px;
 }
 
 /** --------------- Home Footer Section --------------- */
