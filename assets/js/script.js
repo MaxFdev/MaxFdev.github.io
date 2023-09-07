@@ -7,44 +7,33 @@
 // Function for getting active link ID
 function getActiveLinkId() {
     let activeLinkId = null;
-    links.forEach(link => {
-        const linkTargetId = link.getAttribute('href').substring(1);
-        const linkSection = document.getElementById(linkTargetId);
-        const linkPosition = linkSection.offsetTop;
-        const linkBottomPosition = linkPosition + linkSection.offsetHeight;
-
-        if (window.scrollY >= linkPosition - 80 && window.scrollY < linkBottomPosition) {
-            activeLinkId = linkTargetId;
-        }
-    });
+    if (window.scrollY <= 80) {
+        activeLinkId = links[0].getAttribute('href').substring(1);
+    } else if (window.scrollY === document.documentElement.scrollHeight) {
+        activeLinkId = links[links.length].getAttribute('href').substring(1);
+    } else {
+        links.forEach(link => {
+            const linkTargetId = link.getAttribute('href').substring(1);
+            const linkSection = document.getElementById(linkTargetId);
+            const linkPosition = linkSection.offsetTop;
+            const linkBottomPosition = linkPosition + linkSection.offsetHeight;
+            if (window.scrollY >= linkPosition - 80 && window.scrollY < linkBottomPosition) {
+                activeLinkId = linkTargetId;
+            }
+        });
+    }
     return activeLinkId;
 }
 
 // Function to update the "active" class for menu items based on scroll position
 function updateMenuActiveState(targetId) {
-    targetId.classList.add('active');
     links.forEach(link => {
         const linkTargetId = link.getAttribute('href').substring(1);
         if (targetId !== linkTargetId) {
             link.classList.remove('active');
+        } else {
+            link.classList.add('active');
         }
-
-        // const linkSection = document.getElementById(linkTargetId);
-        // const linkPosition = linkSection.offsetTop;
-        // const linkBottomPosition = linkPosition + linkSection.offsetHeight;
-
-        // // Check for intro and contact
-        // if (linkTargetId === 'hero' || linkTargetId === 'contact') {
-        //     if (window.scrollY >= linkPosition - 400 && window.scrollY < linkBottomPosition) {
-        //         link.classList.add('active');
-        //     } else {
-        //         link.classList.remove('active');
-        //     }
-        // // Check if the scroll position is within the bounds of this link's section
-        // } else if (window.scrollY >= linkPosition - 80 && window.scrollY < linkBottomPosition) {
-        //     link.classList.add('active');
-        // } else {
-        // }
     });
 }
 
@@ -58,6 +47,11 @@ function scrollToSection(event) {
     // Find the target section by its ID
     const targetSection = document.getElementById(targetId);
 
+    if (targetId == 'hero') {
+        window.scrollTo({top: 0});
+    } else {
+        
+    }
     if (targetSection) {
         // Calculate the position to scroll to
         const targetPosition = targetSection.offsetTop - 80;
@@ -69,13 +63,6 @@ function scrollToSection(event) {
     }
 
     updateMenuActiveState(targetId);
-    // // Remove the "active" class from all links
-    // links.forEach(link => {
-    //     link.classList.remove('active');
-    // });
-
-    // // Add the "active" class to the clicked link
-    // this.classList.add('active');
 }
 
 // Attach the scrollToSection function to all links with class "scroll-link"
