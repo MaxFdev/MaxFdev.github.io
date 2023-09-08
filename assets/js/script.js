@@ -184,6 +184,7 @@ window.addEventListener('scroll', updateNavScroll);
 
 // Get popup and close button
 const popup = document.getElementById('social-popup');
+const closeButton = document.getElementById('close-popup');
 
 // Get socials button
 const socialsTrigger = document.getElementById('socials-button');
@@ -192,15 +193,21 @@ const socialsTrigger = document.getElementById('socials-button');
 function openPopup() {
     popup.classList.add('popup');
     popup.classList.remove('popup-closed');
-    const closeButton = document.getElementById('close-popup');
     closeButton.addEventListener('click', closePopup);
 }
 
 // Function to close the popup
-function closePopup() {
-    popup.classList.add('popup-closed');
-    popup.classList.remove('popup');
+function closePopup(event) {
+    if ((popup.classList.contains('popup') &&
+        !popup.contains(event.target) &&
+        event.target !== socialsTrigger) ||
+        event.target === closeButton
+    ) {
+        popup.classList.add('popup-closed');
+        popup.classList.remove('popup');
+    }
 }
 
 // Event listeners to open and close
 socialsTrigger.addEventListener('click', openPopup);
+document.addEventListener('click', closePopup)
