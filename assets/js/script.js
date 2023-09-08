@@ -55,7 +55,7 @@ function scrollToSection(event) {
             contactClicks++;
             setTimeout( function() {
                 window.scrollTo({top: document.getElementById(targetId).offsetTop});
-            }, 130);
+            }, 160);
         }
     } else if (targetSection) {
         // Calculate the position to scroll to
@@ -96,7 +96,7 @@ function toggleMobileMenu(event) {
     window.removeEventListener('scroll', updateNavScroll);
     navElement.classList.remove('scroll');
 
-
+    // Close or open the menu
     if (mobileMenu.style.display === 'block') {
         mobileToggle.textContent = '≡';
         mobileMenu.style.display = 'none';
@@ -110,6 +110,38 @@ function toggleMobileMenu(event) {
     }
     navElement.style.transition = '0.3s';
 }
+
+// Function to close mobile menu when clicking outside the menu
+function closeMobileMenuOnClickOutside(event) {
+    if (
+        mobileMenu.style.display === 'block' &&
+        !mobileMenu.contains(event.target) &&
+        event.target !== mobileToggle
+    ) {
+        mobileToggle.textContent = '≡';
+        mobileMenu.style.display = 'none';
+        updateNavScroll();
+        window.addEventListener('scroll', updateNavScroll);
+    }
+}
+
+// Add event listener to the document to detect clicks outside the menu
+document.addEventListener('click', closeMobileMenuOnClickOutside);
+
+// Function to close mobile menu when scrolling occurs
+function closeMobileMenuOnScroll() {
+    if (mobileMenu.style.display === 'block') {
+        setTimeout(function () { 
+            mobileToggle.textContent = '≡';
+            mobileMenu.style.display = 'none';
+            updateNavScroll();
+            window.addEventListener('scroll', updateNavScroll);
+        }, 560);
+    }
+}
+
+// Event listener for window scroll
+window.addEventListener('scroll', closeMobileMenuOnScroll);
 
 // Add eventlistener to mobile menu button
 mobileToggle.addEventListener('click', toggleMobileMenu);
