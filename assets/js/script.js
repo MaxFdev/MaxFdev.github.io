@@ -2,22 +2,20 @@
  * ---------------------- Nav Bar Functionality (Desktop) 
 */
 
-// TODO: Make this track with scrolling
-
 // Function for getting active link ID
 function getActiveLinkId() {
     let activeLinkId = null;
     if (window.scrollY <= 80) {
         activeLinkId = links[0].getAttribute('href').substring(1);
-    } else if (window.scrollY === document.documentElement.scrollHeight) {
-        activeLinkId = links[links.length].getAttribute('href').substring(1);
+    } else if (window.scrollY >= document.getElementById('contact').offsetTop - 2 * (window.innerHeight / 3)) {
+        activeLinkId = links[links.length - 1].getAttribute('href').substring(1);
     } else {
         links.forEach(link => {
             const linkTargetId = link.getAttribute('href').substring(1);
             const linkSection = document.getElementById(linkTargetId);
             const linkPosition = linkSection.offsetTop;
             const linkBottomPosition = linkPosition + linkSection.offsetHeight;
-            if (window.scrollY >= linkPosition - 80 && window.scrollY < linkBottomPosition) {
+            if (window.scrollY >= linkPosition - 2 * (window.innerHeight / 7) && window.scrollY < linkBottomPosition) {
                 activeLinkId = linkTargetId;
             }
         });
@@ -37,6 +35,8 @@ function updateMenuActiveState(targetId) {
     });
 }
 
+let contactClicks = 0;
+
 // Function to handle smooth scrolling when a link is clicked
 function scrollToSection(event) {
     event.preventDefault(); // Prevent the default link behavior
@@ -49,10 +49,15 @@ function scrollToSection(event) {
 
     if (targetId == 'hero') {
         window.scrollTo({top: 0});
-    } else {
-        
-    }
-    if (targetSection) {
+    } else if (targetId == 'contact') {
+        window.scrollTo({top: document.getElementById(targetId).offsetTop});
+        if (contactClicks === 0) {
+            contactClicks++;
+            setTimeout( function() {
+                links[links.length - 1].click();
+            }, 130);
+        }
+    } else if (targetSection) {
         // Calculate the position to scroll to
         const targetPosition = targetSection.offsetTop - 80;
 
@@ -61,8 +66,6 @@ function scrollToSection(event) {
             top: targetPosition
         });
     }
-
-    updateMenuActiveState(targetId);
 }
 
 // Attach the scrollToSection function to all links with class "scroll-link"
