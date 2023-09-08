@@ -55,7 +55,7 @@ function scrollToSection(event) {
             contactClicks++;
             setTimeout( function() {
                 window.scrollTo({top: document.getElementById(targetId).offsetTop});
-            }, 160);
+            }, 200);
         }
     } else if (targetSection) {
         // Calculate the position to scroll to
