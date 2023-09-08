@@ -54,7 +54,7 @@ function scrollToSection(event) {
         if (contactClicks === 0) {
             contactClicks++;
             setTimeout( function() {
-                links[links.length - 1].click();
+                window.scrollTo({top: document.getElementById(targetId).offsetTop});
             }, 130);
         }
     } else if (targetSection) {
@@ -84,7 +84,48 @@ window.addEventListener('scroll', function() {
  * ---------------------- Nav Bar Functionality (Mobile) 
 */
 
-// TODO: Make mobile nav menu
+// Get menu button
+const mobileToggle = document.getElementById('mobile-toggle');
+const mobileMenu = document.getElementById('mobile-menu')
+
+// Function for controlling mobile menu
+function toggleMobileMenu(event) {
+    event.preventDefault(); // Stop redirect
+
+    // Stop scrolling animation
+    window.removeEventListener('scroll', updateNavScroll);
+    navElement.classList.remove('scroll');
+
+
+    if (mobileMenu.style.display === 'block') {
+        mobileToggle.textContent = '≡';
+        mobileMenu.style.display = 'none';
+        updateNavScroll();
+        window.addEventListener('scroll', updateNavScroll);
+    } else {
+        setTimeout(function() {
+            mobileToggle.textContent = '✕';
+            mobileMenu.style.display = 'block';    
+        }, 80)
+    }
+    navElement.style.transition = '0.3s';
+}
+
+// Add eventlistener to mobile menu button
+mobileToggle.addEventListener('click', toggleMobileMenu);
+
+// Function to remove mobile menu on resize
+function menuResizeDetection() {
+    if (mobileMenu.style.display === 'block') {
+        mobileMenu.style.display = 'none';
+        navElement.style.transition = '0.3s';
+        updateNavScroll();
+        window.addEventListener('scroll', updateNavScroll);
+    }
+}
+
+// Event listener for window resize
+window.addEventListener('resize', menuResizeDetection);
 
 /*
  * ---------------------- Nav Bar style 
