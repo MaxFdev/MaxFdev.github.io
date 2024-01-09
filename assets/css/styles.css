@@ -161,6 +161,7 @@ nav li:hover {
     justify-content: space-evenly;
     width: 600px;
     padding: 16px;
+    gap: 4px;
     border-radius: 8px;
     background-color: #ffffff;
     box-shadow: 0px 0px 8px 4px var(--background-color);
@@ -177,6 +178,23 @@ nav li:hover {
 
 .home-hero-about p {
     font-weight: 600;
+}
+
+.home-hero-about a {
+    width: max-content;
+    border-radius: 8px;
+    color: #ffffff;
+    background-color: #000000;
+    margin-top: 8px;
+    padding: 4px;
+    border: 2px solid #000000;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.home-hero-about a:hover {
+    color: #000000;
+    background-color: #00000000;
 }
 
 /** --------------- Home About Section --------------- */
@@ -691,8 +709,8 @@ div.socials {
         font-size: 40px;
     }
 
-    /** Navbar (TMP) */
-    /* TODO: Fix This! */
+    /** Navbar */
+
     nav {
         padding: 2vw;
     }
@@ -755,6 +773,10 @@ div.socials {
 
     .home-hero-about h2 {
         text-align: center;
+    }
+
+    .home-hero-about a {
+        align-self: center;
     }
 
     /** About */

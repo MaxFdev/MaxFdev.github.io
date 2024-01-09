@@ -211,3 +211,4 @@ function closePopup(event) {
 // Event listeners to open and close
 socialsTrigger.addEventListener('click', openPopup);
 document.addEventListener('click', closePopup)
+document.addEventListener('scroll', closePopup)
