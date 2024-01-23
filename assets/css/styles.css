@@ -593,9 +593,9 @@ div.socials {
 }
 
 #close-popup:hover {
-    color: #c40000;
+    color: #ffffff;
     border-color: #c40000;
-    background-color: #00000000;
+    background-color: #c40000;
     margin-top: 20px;
 }
 
