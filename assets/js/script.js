@@ -2,21 +2,27 @@
  * ---------------------- Nav Bar Functionality (Desktop) 
 */
 
+// Cache DOM elements and calculations for performance
+const links = Array.from(document.querySelectorAll('a[href^="#"]'));
+const linkIds = links.map(link => link.getAttribute('href').substring(1));
+const linkSections = linkIds.map(id => document.getElementById(id));
+const linkPositions = linkSections.map(section => section.offsetTop);
+const linkBottomPositions = linkPositions.map((pos, i) => pos + linkSections[i].offsetHeight);
+const windowHeightThird = window.innerHeight / 3;
+const windowHeightSeventh = window.innerHeight / 7;
+
 // Function for getting active link ID
 function getActiveLinkId() {
+
     let activeLinkId = null;
     if (window.scrollY <= 80) {
-        activeLinkId = links[0].getAttribute('href').substring(1);
-    } else if (window.scrollY >= document.getElementById('contact').offsetTop - 2 * (window.innerHeight / 3)) {
-        activeLinkId = links[links.length - 1].getAttribute('href').substring(1);
+        activeLinkId = linkIds[0];
+    } else if (window.scrollY >= document.getElementById('contact').offsetTop - 2 * windowHeightThird) {
+        activeLinkId = linkIds[linkIds.length - 1];
     } else {
-        links.forEach(link => {
-            const linkTargetId = link.getAttribute('href').substring(1);
-            const linkSection = document.getElementById(linkTargetId);
-            const linkPosition = linkSection.offsetTop;
-            const linkBottomPosition = linkPosition + linkSection.offsetHeight;
-            if (window.scrollY >= linkPosition - 2 * (window.innerHeight / 7) && window.scrollY < linkBottomPosition) {
-                activeLinkId = linkTargetId;
+        linkIds.forEach((id, i) => {
+            if (window.scrollY >= linkPositions[i] - 2 * windowHeightSeventh && window.scrollY < linkBottomPositions[i]) {
+                activeLinkId = id;
             }
         });
     }
@@ -35,8 +41,6 @@ function updateMenuActiveState(targetId) {
     });
 }
 
-let contactClicks = 0;
-
 // Function to handle smooth scrolling when a link is clicked
 function scrollToSection(event) {
     event.preventDefault(); // Prevent the default link behavior
@@ -50,13 +54,10 @@ function scrollToSection(event) {
     if (targetId == 'hero') {
         window.scrollTo({top: 0});
     } else if (targetId == 'contact') {
-        window.scrollTo({top: document.getElementById(targetId).offsetTop});
-        if (contactClicks === 0) {
-            contactClicks++;
-            setTimeout( function() {
-                window.scrollTo({top: document.getElementById(targetId).offsetTop});
-            }, 200);
-        }
+        window.scrollTo({top: document.body.scrollHeight});
+        setTimeout( function() {
+            window.scrollTo({top: document.body.scrollHeight});
+        }, 300);
     } else if (targetSection) {
         // Calculate the position to scroll to
         const targetPosition = targetSection.offsetTop - 80;
@@ -69,7 +70,6 @@ function scrollToSection(event) {
 }
 
 // Attach the scrollToSection function to all links with class "scroll-link"
-const links = document.querySelectorAll('a[href^="#"]');
 links.forEach(link => {
     link.addEventListener('click', scrollToSection);
 });
