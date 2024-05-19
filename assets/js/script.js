@@ -6,14 +6,14 @@
 const links = Array.from(document.querySelectorAll('a[href^="#"]'));
 const linkIds = links.map(link => link.getAttribute('href').substring(1));
 const linkSections = linkIds.map(id => document.getElementById(id));
-const linkPositions = linkSections.map(section => section.offsetTop);
-const linkBottomPositions = linkPositions.map((pos, i) => pos + linkSections[i].offsetHeight);
-const windowHeightThird = window.innerHeight / 3;
-const windowHeightSeventh = window.innerHeight / 7;
 
 // Function for getting active link ID
 function getActiveLinkId() {
-
+    const linkPositions = linkSections.map(section => section.offsetTop);
+    const linkBottomPositions = linkPositions.map((pos, i) => pos + linkSections[i].offsetHeight);
+    const windowHeightThird = window.innerHeight / 3;
+    const windowHeightSeventh = window.innerHeight / 7;
+    
     let activeLinkId = null;
     if (window.scrollY <= 80) {
         activeLinkId = linkIds[0];
