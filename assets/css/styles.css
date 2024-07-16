@@ -67,13 +67,14 @@ header {
     color: #ffffff;
     background-color: #000000;
     padding: 8px;
+    font-size: small;
 }
 
 /** --------------- Navbar --------------- */
 
 nav {
     position: sticky;
-    top: 38px;
+    top: 34px;
     z-index: 1;
     height: 72px;
     display: flex;
@@ -726,7 +727,6 @@ div.socials {
     /** Navbar */
 
     nav {
-        top: 60px;
         padding: 2vw;
     }
 
@@ -891,6 +891,13 @@ div.socials {
 /** ------------------------------ Phone Size ------------------------------ */
 
 @media (max-width: 580px) {
+
+    /** Nav */
+
+    nav {
+        top: 52px;
+    }
+
     /** Footer */
 
     .home-footer-message p {
