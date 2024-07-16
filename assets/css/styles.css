@@ -55,11 +55,25 @@ a:hover {
     color: var(--secondary-color);
 }
 
+/** --------------- Header --------------- */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    background-color: #000000;
+    padding: 8px;
+}
+
 /** --------------- Navbar --------------- */
 
 nav {
     position: sticky;
-    top: 0;
+    top: 38px;
     z-index: 1;
     height: 72px;
     display: flex;
@@ -712,6 +726,7 @@ div.socials {
     /** Navbar */
 
     nav {
+        top: 60px;
         padding: 2vw;
     }
 
